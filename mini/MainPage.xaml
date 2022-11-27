@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="mini.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:mini"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="MenuTemplate">
+            <Grid Width="290" Height="220" Background="HotPink">
+                <Image Source="{Binding MenuImage}" Stretch="Fill" Margin="5" Width="280"
+                       Height="160" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                <TextBlock Text="{Binding MenuItem}" FontSize="40" Foreground="Black" 
+                           VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <MediaElement x:Name="me"  Margin="10" Source="/Assets/data/JAY.mp4"/>
+        <!--<MediaElement RepeatBehavior='Forever' Source="/Assets/data/JAY.mp4" />-->
+        <!--SelectionChanged="me_MediaEnded"--><!--RepeatBehavior='Forever'.."/Assets/data/JAY.mp4"-->
+        <!--<Grid.Background>
+            --><!--<MediaElement x:Name="mdE" Margin="10" Source="/Assets/data/JAY.mp4" />--><!--
+            <ImageBrush ImageSource="/Assets/Menu/20.jpg" Opacity="0.5"/>
+        </Grid.Background>-->
+        <GridView x:Name="gvMenu" HorizontalAlignment="Center" Height="225" 
+                  VerticalAlignment="Bottom" Width="900" FontFamily="Ink Free" ItemTemplate="{StaticResource MenuTemplate}"/>
+        <TextBlock Text="KSTLYE SHOP" FontSize="150" VerticalAlignment="Top" 
+                   HorizontalAlignment="Center" Margin="50,0,0,-300" Foreground="YellowGreen" FontFamily="Ink Free" FocusVisualPrimaryBrush="{x:Null}"/>
+        <TextBlock Text="KSTLYE SHOP" FontSize="150" VerticalAlignment="Top" 
+                   HorizontalAlignment="Center" Margin="40,0,0,-300" Foreground="Orange" FontFamily="Ink Free"/>
+        <TextBlock Text="INTRODUCE" FontSize="50" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Margin="0,0,0,-470" Foreground="Bisque" FontFamily="Impact"/>
+        <!--Translation="40,40,2,2"-->
+    </Grid>
+</Page>
